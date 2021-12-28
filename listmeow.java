@@ -12,6 +12,12 @@ public class listmeow {
         list.add(2);
         list.add(12);
 
+        /* if(list.contains(11)) {
+            System.out.println("Yes the list contains");
+        } else {
+            System.out.println("No, the list don't");
+        } */
+
         /*
          * for (int i = 0; i < list.size(); i++) { // 0 - 2
          * System.out.println(list.get(i));
