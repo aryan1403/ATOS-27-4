@@ -5,6 +5,9 @@ public class mapsmeow {
     public static void main(String[] args) {
         Map<String, String> map = new HashMap<>();
 
+        // map - interface
+        // hashmap - class
+
         map.put("name", "Aaryan");
         map.put("name2", "Naveen");
 
