@@ -13,7 +13,17 @@ public class queumeow {
         q.offer(50); 
         // 50 15 10 5
 
-        for (int i = 0; i < q.size() ; i++) {
+        /* int counter = 0;
+        int element = 0; */
+        /* while(counter <= 2) {
+            element = q.poll();
+            counter++;
+        } */
+        System.out.println(q.stream().collect(Collectors.toList()).get(3));
+
+        // System.out.println(element);
+
+        /* for (int i = 0; i < q.size() ; i++) {
             for (int j = 0; j < q.size(); j++) {
                 List<Integer> list = q.stream().collect(Collectors.toList());
                 if(list.get(i) > list.get(j)) {
@@ -32,8 +42,8 @@ public class queumeow {
                     q.addAll(list);
                 }
             }
-        }
+        } */
 
-        q.forEach(System.out::println);
+        // q.forEach(System.out::println);
     }
 }
