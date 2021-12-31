@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class comcomb {
@@ -17,6 +16,7 @@ public class comcomb {
     public static boolean isPalindrome(int num) {
         String s = num + "";
         String r = "";
+
         for (int i = s.length() - 1; i >= 0; i--) {
             r += s.charAt(i);
         }
@@ -35,7 +35,7 @@ public class comcomb {
         list.add(111);
 
         list.stream().filter(e -> (isPrime(e) && isPalindrome(e)))
-                .collect(Collectors.toList())
-                .forEach(System.out::println);
+            .collect(Collectors.toList())
+            .forEach(System.out::println);
     }
 }
