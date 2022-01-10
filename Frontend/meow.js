@@ -1,10 +1,20 @@
-let counter = 1;
+let cartItems = [];
 
-function increment() {
-    counter = counter + 1;
-    if(counter > 5) {
-        alert('only 5 in stock!');
-    } else {
-        document.getElementById('count').innerHTML = "Buy " + counter;
-    }
+function addToCart() {
+  const title = document.getElementById("cardT").innerHTML;
+  const desc = document.getElementById("cardD").innerHTML;
+
+  const data = { title, desc };
+  // let pre = JSON.parse(localStorage.getItem("data"));
+
+  cartItems.push(data);
+  cartItems = [...JSON.parse(localStorage.getItem("data")), data];
+
+  if(cartItems[0] === null) {
+      cartItems = cartItems.reverse();
+      cartItems.pop();
+      cartItems = cartItems.reverse(); 
+  }
+
+  localStorage.setItem("data", JSON.stringify(cartItems));
 }
