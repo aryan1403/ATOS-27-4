@@ -1,3 +1,5 @@
 #!/bin/sh
 
-echo "Aaryan"
+echo "Enter your name"
+read mew
+echo "Hey $mew"
