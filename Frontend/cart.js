@@ -1,10 +1,7 @@
-let counter = 1;
 window.onload = function () {
-  let data = [];
+  data = [JSON.parse(localStorage.getItem("data"))];
 
-  data = JSON.parse(localStorage.getItem("data"));
-
-  console.log(data);
+  data = data[0];
 
   data.forEach((value) => {
     const title = value.title;
