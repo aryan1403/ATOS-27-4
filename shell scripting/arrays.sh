@@ -5,4 +5,6 @@ MEWO[1]="arush"
 MEWO[2]="venkatesh"
 MEWO[3]="mounika"
 
-echo ${MEWO[1]}
+DIVISION=`expr 23 / 2`
+
+echo $DIVISION
