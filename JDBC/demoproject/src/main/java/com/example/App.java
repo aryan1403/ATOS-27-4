@@ -14,15 +14,19 @@ public class App {
     private static String user = "root";
     private static String pass = "12345";
 
-    private static String query = "select * from testdb";
     public static void main(String[] args) throws SQLException {
         Connection con = DriverManager.getConnection(db_url, user, pass);
-        Statement st = con.createStatement();
-        ResultSet rs = st.executeQuery(query);
+        /* PreparedStatement ps = con.prepareStatement("insert into testdb values (?, ?, ?)");
+        ps.setInt(1, 12);
+        ps.setString(2, "aryanmeow");
+        ps.setInt(3, 15);
+
+        ps.executeUpdate(); */
+
+        ResultSet rs = con.createStatement().executeQuery("select * from testdb");
 
         while(rs.next()) {
-            System.out.println("ID : " + rs.getInt("id"));
-            System.out.println("Name : " + rs.getString("name"));
+            System.out.println(rs.getString("name"));
         }
 
         con.close();
