@@ -16,18 +16,22 @@ public class App {
 
     public static void main(String[] args) throws SQLException {
         Connection con = DriverManager.getConnection(db_url, user, pass);
-        /* PreparedStatement ps = con.prepareStatement("insert into testdb values (?, ?, ?)");
-        ps.setInt(1, 12);
-        ps.setString(2, "aryanmeow");
-        ps.setInt(3, 15);
+        /*
+         * PreparedStatement ps =
+         * con.prepareStatement("insert into testdb values (?, ?, ?)");
+         * ps.setInt(1, 12);
+         * ps.setString(2, "aryanmeow");
+         * ps.setInt(3, 15);
+         * 
+         * ps.executeUpdate();
+         */
 
-        ps.executeUpdate(); */
+        ResultSet rs = con.createStatement()
+                .executeQuery("select * from testdb full join participants on testdb.name=participants.name");
 
-        ResultSet rs = con.createStatement().executeQuery("select * from testdb");
-
-        while(rs.next()) {
+        while (rs.next()) {
             System.out.println(rs.getString("name"));
-        }
+        } 
 
         con.close();
     }
