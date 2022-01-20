@@ -11,6 +11,6 @@ public class SpringdemoApplication {
 		BeanFactory context = new XmlBeanFactory(resource);
 		meow m = (meow) context.getBean("meow");
 
-		m.saymeow();
+		m.speak();
 	}
 }
